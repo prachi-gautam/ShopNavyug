@@ -1,0 +1,12 @@
+<div class="row no-gutters">
+  <div class="col-2">
+    <button (click)="removeFromCart(product,'remove')"
+      class="btn btn-primary btn-block products__add-to-cart-cta">-</button>
+  </div>
+  <div class="col text-center product-quantity__text">
+    {{ getQuantity(product) }} in cart
+  </div>
+  <div class="col-2">
+    <button (click)="addToCart(product,'add')" class="btn btn-primary btn-block products__add-to-cart-cta">+</button>
+  </div>
+</div>

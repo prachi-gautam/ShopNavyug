@@ -1,0 +1,25 @@
+<div *ngIf="shoppingCartList.length==0">Hey,it feels so light !</div>
+<div *ngIf="shoppingCartList.length==0">There is nothing in your bag. Let's add some items !!</div>
+<table *ngIf="shoppingCartList.length!=0" mdbTable hover="true">
+  <thead class="black white-text">
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let el of shoppingCartList">
+      <th scope="row">{{el.name}}</th>
+      <td>{{el.price}}</td>
+      <td>{{el.quantity}}</td>
+      <td>{{el.price * el.quantity}}</td>
+    </tr>
+    <caption>Total</caption>
+    <td></td>
+    <td></td>
+    <td>{{getTotal()}}</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <button mat-raised-button color="primary">Proceed to checkout</button>
+  </tbody>
+</table>

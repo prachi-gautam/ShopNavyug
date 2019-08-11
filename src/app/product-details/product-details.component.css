@@ -1,0 +1,17 @@
+.example-card {
+  max-width: 600px;
+    margin-left: 300px;
+    width: 700px;
+    height: auto;
+    margin-top: 60px;
+}
+
+.example-header-image {
+ 
+  background-size: cover;
+}
+
+.mat-card-image{
+	width: 600px !important;
+	height: 600px;
+}

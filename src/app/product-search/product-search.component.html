@@ -1,0 +1,8 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input placeholder="Hi!! What are you looking for ?" matInput (ngModelChange)="searchProducts($event)"
+      [(ngModel)]="searchText" class="form-control" name="search">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+</form>

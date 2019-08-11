@@ -1,0 +1,36 @@
+<nav-bar (showWishListEvent)="showWishListFlag()" (goToListEvent)="goToList()" (showCartListEvent)="showCartListFlag()">
+</nav-bar>
+
+<div class="products">
+  <div *ngIf="filteredProducts.length==0">{{errorMsg}}</div>
+  
+  <wishlist *ngIf="showWishList" [wishList]="wishList" [shoppingCartList]=""></wishlist>
+  <shopping-cart *ngIf="showCartList" [shoppingCartList]="shoppingCartList"></shopping-cart>
+
+  <div class="row" *ngIf="!(showWishList || showCartList)">
+    <div class="row col-12">
+      <div class="col-6">
+        <product-sort (sortType)="sortProductsByPrice($event)"></product-sort>
+      </div>
+      <div class="col-6">
+        <product-search (search)="searchProductsByText($event)"></product-search>
+      </div>
+    </div>
+    <div class="col-3 row divWidth" *ngIf="filteredProducts.length!=0">
+      <div class="row">
+        <ng-container *ngFor="let p of filteredProducts; let i = index">
+          <div class="col">
+
+            <product-cart (click)="showDetails(p)" [product]="p" [productsList]="filteredProducts"
+              (wishlistEvent)="addToWishlist($event)" (shoppingCartEvent)="updateItem($event)" [wishList]="wishList"
+              [shopping-cart]="shoppingCartList"></product-cart>
+
+            <div *ngIf="(i+1)%2 === 0" class="w-100"></div>
+
+          </div>
+        </ng-container>
+      </div>
+      <product-details *ngIf="showDetailsFlag" [product]="productSelected"></product-details>
+    </div>
+  </div>
+</div>

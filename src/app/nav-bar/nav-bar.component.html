@@ -1,0 +1,12 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>Shop@Navyug Infosolutions</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="marginIcon" (click)="goToList()">home</mat-icon>
+    <mat-icon class="marginIcon" matBadge="{{noOfWishListItems}}" matBadgePosition="before" matBadgeColor="accent"
+      (click)="goToWishlist()">favorite_border</mat-icon>
+    <mat-icon matBadge="{{noOfshopCartItems}}" matBadgePosition="before" matBadgeColor="accent" (click)="goToCart()">
+      shopping_cart
+    </mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>

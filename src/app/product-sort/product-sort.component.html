@@ -1,0 +1,7 @@
+<mat-form-field>
+  <mat-label>Sort By</mat-label>
+  <mat-select [(ngModel)]="sortValue" (ngModelChange)="sortByPrice($event)">
+    <mat-option [value]="1">Low price first</mat-option>
+    <mat-option [value]="2">High price first</mat-option>
+  </mat-select>
+</mat-form-field>

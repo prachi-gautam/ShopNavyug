@@ -1,0 +1,14 @@
+<div class="col-3 row divWidth">
+  <div *ngIf="wishList.length ==0">Oops!! You have no wishlisted products !!</div>
+  <div class="row" *ngIf="wishList.length !=0">
+    <ng-container *ngFor="let p of wishList; let i = index">
+      <div class="col">
+        <product-cart (click)="showDetails(p)" [product]="p" [productsList]="filteredProducts"
+          (wishlistEvent)="addToWishlist($event)" (shoppingCartEvent)="updateItem($event)" [wishList]="wishList"
+          [shopping-cart]="shoppingCartList"></product-cart>
+        <div *ngIf="(i+1)%2 === 0" class="w-100"></div>
+      </div>
+    </ng-container>
+  </div>
+
+</div>
